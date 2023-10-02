@@ -10,6 +10,9 @@
 # Google Drive generated files
 desktop.ini 
 
+# Folders to exclude
+notes/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
