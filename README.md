@@ -1,10 +1,22 @@
 # ml-classification-alarms  
 
+Author: Erin James Wills, ejw.data@gmail.com
+
+![Alarm Banner](./images/alarm-optimization.png)
+<cite>Photo by <a href="https://unsplash.com/@hjrc33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Héctor J. Rivas</a> on <a href="https://unsplash.com/photos/2Axr8NAAqng?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></cite>  
+
+```
+Status:  Proof of Concept Complete.  See Future Improvements section for details.  
+```
+  
 ## Overview
 
 The purpose of this project is to show how machine learning could be used to validate alarm/alert settings for system monitoring.  Alarm metrics notify you when the system is not behaving in an expected manner.  The original metrics might have been created based on the information available but will often change over time.  The metrics are often changed when it is realized the system did not catch a particular scenario or there is an increase in overall alarms that are triggered.  
 
 This project shows that clustering techniques could be used to identify outliers and a modified classification model could be used to identify the near optimum metrics to use.  This technique is something that could be run to obtain the metrics and rerun to monitor if the metrics are changing with time and need updating.  
+
+![Example Analysis](./images/svc-lower-margin.png)  
+<cite>Example of Failures PLotted with the SVC Boundary Condition (Blue Dotted Line) and a Modified Margin (Red Dotted Line).</cite>
 
 ## Concepts
 
@@ -42,4 +54,8 @@ I selected a couple classification algorithms to test on this problem.  I though
 
 1.  `SVC`:  A Support Vector Classifier (SVC) is a machine learning model used for classification tasks. It finds the hyperplane that best separates different classes of data while maximizing the margin between them, making it effective for complex decision boundary problems.  
 
-1.  `Gaussian Naive-Bayes`:  Gaussian Naive-Bayes is a probabilistic machine learning model used for classification tasks. It assumes that features are normally distributed within each class and calculates the likelihood of observing a particular combination of feature values to make class predictions.
+## Future Improvements  
+
+1.  Create multiple datasets - each dataset should be timestamp records that indicate if there was an error or not.  The data can then be aggregated into 30 minute periods like the current data is formatted.  This will make the example less abstract and show the preprocessing of the data that is needed before the machine learning can begin.  
+1.  Create a pipeline that will run all the steps on all the datasets.
+1.  Store results in a file and create a dashboard that can indicate current parameters and any significant changes from the previous analysis.  
